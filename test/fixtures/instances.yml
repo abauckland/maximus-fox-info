@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  product_id: 1
+  code: I-01
+
+two:
+  id: 2
+  product_id: 1
+  code: I-02
+
+three:
+  id: 3
+  product_id: 2
+  code: I-03

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  standarditem_id: 
+  text: value_1
+
+two:
+  id: 2
+  standarditem_id: 
+  text: value_2

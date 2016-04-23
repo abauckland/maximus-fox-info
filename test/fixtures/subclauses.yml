@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  guide_id: 1
+  title: subclause title one
+  descript1: description one
+  descript2: description two
+  clausetype_id: 1
+
+two:
+  id: 2
+  guide_id: 2
+  title: subclause title two
+  descript1: description three
+  descript2: description four
+  clausetype_id: 1

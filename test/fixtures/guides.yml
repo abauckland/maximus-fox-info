@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  text: <p>test guide one text</p>
+  preamble_id:
+  postscript_id:
+
+two:
+  id: 2
+  text: <p>test guide two text</p>
+  preamble_id: 1
+  postscript_id: 1

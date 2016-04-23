@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  subclause_id: 1
+  clauseline: 0
+  linetype_id: 1
+  txt_id: 1
+
+two:
+  id: 2
+  subclause_id: 1
+  clauseline: 1
+  linetype_id: 2
+  txt_id: 2
+
+three:
+  id: 3
+  subclause_id: 1
+  clauseline: 1
+  linetype_id: 3
+  txt_id: 1
+  
+four:
+  id: 4
+  subclause_id: 1
+  clauseline: 1
+  linetype_id: 4
+  txt_id: 1
+  
+five:
+  id: 5
+  subclause_id: 1
+  clauseline: 1
+  linetype_id: 5
+  txt_id: 1
+  
+six:
+  id: 6
+  subclause_id: 1
+  clauseline: 1
+  linetype_id: 6
+  txt_id: 1

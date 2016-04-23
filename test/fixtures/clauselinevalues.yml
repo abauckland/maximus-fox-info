@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clauseline_id: 1
+  linevalue_id: 1
+
+two:
+  clauseline_id: 1
+  linevalue_id: 2

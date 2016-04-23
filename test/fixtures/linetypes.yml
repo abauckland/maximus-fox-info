@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  level: 1
+  txt: true
+  input: false
+  description: plain text
+
+two:
+  id: 2
+  level: 2
+  txt: true
+  input: false
+  description: alpha prefixed text
+
+three:
+  id: 3
+  level: 3
+  txt: true
+  input: false
+  description: roman prefixed text
+  
+two:
+  id: 4
+  level: 1
+  txt: true
+  input: true
+  description: text and value
+  
+two:
+  id: 5
+  level: 2
+  txt: true
+  input: true
+  description: alpha prefixed text and value
+  
+two:
+  id: 6
+  level: 3
+  txt: true
+  input: true
+  description: roman prefixed text and value
