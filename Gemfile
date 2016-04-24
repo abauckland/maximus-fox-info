@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 
@@ -21,21 +22,43 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'mysql2', '0.3.16'
+gem 'mysql2'
 
 gem 'jquery-datatables-rails'
 
+gem 'carrierwave'
 
 gem 'devise'
+#gem 'devise-encryptable'
+gem 'pundit'
+gem 'aasm'
+gem 'nokogiri'
+#gem 'bcrypt', :require => 'bcrypt'
 
+gem 'prawn'
+gem 'prawn-table'
+
+gem "gibbon", "~> 1.0.4"
 
 group :development do
-  gem 'capistrano', '3.4.0'
+  gem 'capistrano', '~> 3.1'
   gem 'capistrano-rails', '~> 1.1'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler', '~> 1.1.2'
 end
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
 
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+# Use debugger
+# gem 'debugger', group: [:development, :test]
+gem 'bugsnag'
+gem 'newrelic_rpm'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
