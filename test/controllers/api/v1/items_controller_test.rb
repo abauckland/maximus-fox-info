@@ -8,7 +8,9 @@ class Api::V1::ItemsControllerTest < ActionController::TestCase
   end
 
 #show
-#curl -X GET http://localhost:3000/api/v1/bims/1.json
+#curl -X GET http://localhost:3000/api/v1/items/1.json
+# curl -X GET http://localhost:3000/api/v1/items/1.json -H 'Authorization: Token token="16e1955dcf6a6ec021f6d4147ecff821"
+
   test "should get item record" do
     xhr :get, :show, format: :json, id: @item_1.id
     assert_response :success
@@ -24,7 +26,7 @@ class Api::V1::ItemsControllerTest < ActionController::TestCase
     assert_response :success
 
     json_response = JSON.parse(@response.body)
-    assert_equal  [2,4], json_response["item"]["children"]
+    assert_equal  [4,2], json_response["item"]["children"]
   end
 
   test "should get list of parent ids" do
