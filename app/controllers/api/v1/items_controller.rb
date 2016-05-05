@@ -4,9 +4,8 @@ module Api
     class ItemsController < ApplicationController
 # curl http://localhost:3000/api/products -H 'Authorization: Token token="afbadb4ff8485c0adcba486b4ca90cc4"'
       include ActionController::HttpAuthentication::Token
-#      include RefsystemSettings
 
-      before_filter :restrict_access
+#      before_filter :restrict_access
       before_action :set_item
 
 #      before_action :set_ref_system
@@ -14,91 +13,32 @@ module Api
 
 #data responses to single item id
       def show
+        @ident_keys = Identkey.item_identkey(@item.id)
+        @perform_keys = Performkey.item_performkey(@item.id)
       end
 
       def show_children
+        @child_ids = Itemitem.where(:parent_id => @item.id).pluck(:child_id)
       end
 
       def show_parents
+        @parent_ids = Itemitem.where(:child_id => @item.id).pluck(:parent_id)
       end
 
-      def show_subclauses
-      end
-
-      def show_products
-      end
-
-      def show_identity
-        @ident_keys = Identkey.item_identkey_ids(@item.id)
-      end
-
-      def show_preformance
-        @perform_keys = Performkey.item_performkey_ids(@item.id)
-      end
-
-      def show_guide
-      end
-
-
-
-      def find_titles
+#used where list of possible items is returned based on search term
+      def search
         @items = Item.title_search(params[:search_term])
         respond_with @items
       end
 
-
-
-#get reference system (specright, uniclass2015, other)
-  #set table name
-  #set type of reference code (caws, uniclass2015)
-#get reference code
-  #look up code to get reference system id
-
-#params[:client] - set in api key?
-#params[:ref_system] - set in api key?
-
-#params[:variables]
-
-
-#joins().where().order()
-
-
-#return
-###list of items
-
-    #reference known - id of item
-      #get items for single reference
-        #! get item using id or title
-        #! Item.where(:id => params[:id]).first
-      #get multiple items
-        #! Item.where(:id => params[:ids])
-
-
-    #references not known
-      #find items with no reference
-        #! get list of all item ids
-        #! Item.all.ids
-        #! compare in user system and then get details of each one that has no match
-        #! user call first item id
-        #! assign reference in host system
-
-    #items by key word
-        #! search item list by search terms
-        #! Item.title_search(params[:search]) 
-
-    #list all items
-        #! get list of all ids 
-        #! Item.all.ids
+      def missing_items
+        @items = Item.not.where(:id => params[:id_array])
+      end#
 
     #get multiple items at same time
         #! return list of items, associated items, subclauses without duplication
         #1 return two items - return items, list of subclauses - without duplication, 
         #subclause content
-
-
-
-
-#FRESH PULL OF DATA - NO EXISTING SET UP
 
 #{
 #"item_1":{
@@ -114,67 +54,6 @@ module Api
 # },
 # "item_2":{},
 #}
-
-
-
-
-
-###get all items
-    #get all items
-    #items = Item.all.order_by_parent().order_by_ref_system()
-    
-
-    #for each item get contents
-    #item = {}
-      #items.each_with_index do |item|
-        #assemble contents for item clause
-        #get each line for item
-          #get descriptor lines
-            #from all products associated with item
-            ##variables = Performkey.joins(:performs => characs .... ).where().uniq.order_by_frequency
-            ## get variables
-          #get general lines
-            #from all products associated with item
-            #get variables
-          #get performance lines
-            #from all products associated with item
-            #get variables          
-            ##variables = Identitykey.joins(:identities =>  .... ).where().uniq.order_by_frequency
-        #associate with item
-        #item[:content] = content
-        
-        #assemble guide for item clause
-          #item[:guide] = item.guidance
-        #associate with item
-      #end
-    #for each item get contents and guides
-
-    #return items and subclauses
-
-
-
-
-    #return list of items ordered by reference code
-    #return item and associated items order by reference code
-    #
-
-    #get item by title name
-      #return list of closest matches
-    #get item by ref_system code
-      #return list of closest matches - should be just one match
-
-
-###get all item and associated content
-
-###get all item and associated content    
-    
-###get all items and return list of references for selected system
-    #Item.all
-###get all items and return list of where no references for system
-
-
-
-
 
 
 def check_query_protocol
