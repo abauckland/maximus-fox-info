@@ -1,5 +1,5 @@
 class Subclause < ActiveRecord::Base
-#associations    
+#associations
   belongs_to :guide
   belongs_to :clausetype
   has_many :itemsubclauses

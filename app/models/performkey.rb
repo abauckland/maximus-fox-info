@@ -3,8 +3,8 @@ class Performkey < ActiveRecord::Base
   has_many :performs
 
 #scopes
-  scope :item_performkey_ids, ->(item_id) {joins(:performs => [:instances => :product]
+  scope :item_performkey, ->(item_id) {joins(:performs => [:instances => :product]
                                       ).where('products.item_id' => item_id
-                                      ).ids.uniq}
+                                      ).uniq}
 
 end
