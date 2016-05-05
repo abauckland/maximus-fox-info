@@ -12,6 +12,6 @@ three:
   parent_id: 1
   child_id: 4
 
-three:
+four:
   parent_id: 2
   child_id: 5
