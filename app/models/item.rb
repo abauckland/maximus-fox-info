@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
 #associations    
   belongs_to :guide
+  belongs_to :verion
   has_many :products
   has_many :itemsubclauses
   has_many :subclauses, :through => :itemsubclauses

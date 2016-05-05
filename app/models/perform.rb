@@ -10,7 +10,6 @@ class Perform < ActiveRecord::Base
 #scopes
   scope :item_performs, ->(item_id) {joins(:instances => :product).where('products.item_id' => item_id)}
 
-#methods
   def perform_key
     performkey.text
   end
