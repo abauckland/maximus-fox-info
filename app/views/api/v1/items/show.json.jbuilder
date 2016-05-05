@@ -10,7 +10,7 @@ json.item do
 
   json.set! :identity do
     @ident_keys.each do |key|
-      json.set! key.text, Identvalue.item_performvalues_array(@item.id, key.id)
+      json.set! key.text, Identvalue.item_identvalues_array(@item.id, key.id)
     end
   end
 
@@ -20,6 +20,6 @@ json.item do
     end
   end
 
-  json.guide format_content(@item.guidance)
+  json.guide @item.guidance
 
 end
