@@ -5,17 +5,12 @@ module Api
 # curl http://localhost:3000/api/products -H 'Authorization: Token token="afbadb4ff8485c0adcba486b4ca90cc4"'
       include ActionController::HttpAuthentication::Token
 
-      before_filter :restrict_access
+#      before_filter :restrict_access
       before_action :set_subclause
 
 #data responses to single item id
-      def show_raw
-      end
-
-      def show_interpreted
-      end
-
-      def show_guide
+      def show
+        @lines = Clauseline.where(:subclause_id => @subclause.id).order(:clauseline)
       end
 
   private
