@@ -6,5 +6,7 @@ class ClauselineTest < ActiveSupport::TestCase
      assert_respond_to(clauseline, :clauselinevalues)
      assert_respond_to(clauseline, :linevalues)
      assert_respond_to(clauseline, :subclause)
+     assert_respond_to(clauseline, :linetype)
+     assert_respond_to(clauseline, :txt)
    end
 end

@@ -10,8 +10,8 @@ class IdentkeyTest < ActiveSupport::TestCase
 #scopes
    test "should return keys for items" do
       item = items(:one)
-      keys = Identkey.item_identkey_ids(item.id)
-      assert_equal [1,2], keys
+      keys = Identkey.item_identkey(item.id)
+      assert_equal [1,2], keys.ids
    end
 
 end

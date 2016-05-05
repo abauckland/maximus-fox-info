@@ -10,8 +10,8 @@ class PerformkeyTest < ActiveSupport::TestCase
 #scopes
    test "should return keys for items" do
       item = items(:one)
-      keys = Performkey.item_performkey_ids(item.id)
-      assert_equal [1,2], keys
+      keys = Performkey.item_performkey(item.id)
+      assert_equal [1,2], keys.ids
    end
 
 end

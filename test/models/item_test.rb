@@ -10,6 +10,7 @@ class ItemTest < ActiveSupport::TestCase
 #associations
    test "should have associations" do
      item = Item.new
+     assert_respond_to(item, :version)
      assert_respond_to(item, :guide)
      assert_respond_to(item, :products)
      assert_respond_to(item, :subclauses)
@@ -41,7 +42,7 @@ class ItemTest < ActiveSupport::TestCase
    end
 
    test "should return ids of children" do
-      assert_equal [2,4], @item_1.child_ids
+      assert_equal [4, 2], @item_1.child_ids
    end
 
    test "should return ids of parents" do
