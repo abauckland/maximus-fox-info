@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  
+  resources :guides
+  
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :items, :only => [:show] do
