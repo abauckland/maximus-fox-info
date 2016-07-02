@@ -6,8 +6,8 @@ class Item < ActiveRecord::Base
   has_many :itemsubclauses
   has_many :subclauses, :through => :itemsubclauses
   
-  has_many :child_items, :class_name => 'Itemitem', :foreign_key => 'parent_id'
-  has_many :parent_items, :class_name => 'Itemitem', :foreign_key => 'child_id'
+  has_many :itemrelates
+  has_many :itemitems
 
 #validations
   validates :title,
