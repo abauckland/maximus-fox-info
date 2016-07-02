@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_id: 1
+  relation: 0
+
+two:
+  item_id: 2
+  relation: 1
+
+three:
+  item_id: 3
+  relation: 0
+
+four:
+  item_id: 4
+  relation: 0

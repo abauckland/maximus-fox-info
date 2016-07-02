@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  parent_id: 1
-  child_id: 2
+  itemrelate_id: 1
+  item_id: 2
 
 two:
-  parent_id: 2
-  child_id: 3
+  itemrelate_id: 2
+  item_id: 4
 
 three:
-  parent_id: 1
-  child_id: 4
+  itemrelate_id: 2
+  item_id: 5
 
 four:
-  parent_id: 2
-  child_id: 5
+  itemrelate_id: 3
+  item_id: 5
