@@ -1,0 +1,41 @@
+<div class="row title_band">
+    <div class="page_title">
+        <h1>Listing Guides</h1>
+    </div>
+    <div><%= link_to 'Create Guide', new_guide_path(@guide), class: "title_button"%></div>
+</div>
+
+<div class="row">
+    <div class="col-1-1 column_1">
+        <div class="border">
+
+        <%= render :partial => "flash_notice" %>
+
+            <div class="row">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th class="row_button no_buttons_3"></th>
+                        </tr>
+                    </thead>
+                </table>
+
+                <table>
+                    <tbody>
+                        <% @guides.each do |guide| %>
+                        <tr>
+                            <td class="mob_cell"><%= guide.text %></td>
+                            <td class="row_button no_buttons_3">
+                                <%= link_to "", edit_guide_path(guide), class: 'line_edit_icon', title: "edit guide text" %>
+
+                            </td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
