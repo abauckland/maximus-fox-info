@@ -14,8 +14,8 @@ class ItemTest < ActiveSupport::TestCase
      assert_respond_to(item, :guide)
      assert_respond_to(item, :products)
      assert_respond_to(item, :subclauses)
-     assert_respond_to(item, :child_items)
-     assert_respond_to(item, :parent_items)
+     assert_respond_to(item, :itemrelates)
+     assert_respond_to(item, :itemitems)
    end
 
 #validations
