@@ -1,68 +1,64 @@
 
-  class GuidenotesController < ApplicationController
+  class GuidesController < ApplicationController
 
 #    skip_before_filter :authenticate_user!, :only => [:show]
 
-    before_action :set_guidenote, only: [:edit, :update, :create, :destroy]
+    before_action :set_guide, only: [:edit, :update, :create, :destroy]
 
 
     def index
-      @guidenotes = Guidenote.all.order(:text)
-      authorize @guidenotes
+      @guides = Guide.all.order(:text)
     end
 
-#    # GET /guidenotes/1
+#    # GET /guides/1
 #    def show
-#      @guidenote = Guidenote.where(:id => params[:id]).first
-#      render :text=> @guidenote.text 
+#      @guide = Guide.where(:id => params[:id]).first
+#      render :text=> @guide.text 
 #    end
 
     def new
-      @guidenote = Guidenote.new
+      @guide = Guide.new
     end
 
-    # GET /guidenotes/1/edit
+    # GET /guides/1/edit
     def edit
-      authorize @guidenote
     end
 
     # POST /pages
     def create
-      @guidenote = Guidenote.new(guidenote_params)
-      authorize @guidenote
-      if @guidenote.save
+      @guide = Guide.new(guide_params)
+      if @guide.save
       else
-        render guidenotes_path
+        render guides_path
       end
     end
 
 
-    # PATCH/PUT /guidenotes/1
+    # PATCH/PUT /guides/1
     def update
-      authorize @guidenote
-      if @guidenote.update(guidenote_params)
+      if @guide.update(guide_params)
 #on create redirect back to dashbard
-        redirect_to guidenotes_path, notice: 'guidenote item was successfully updated.'
+        redirect_to guides_path, notice: 'guide item was successfully updated.'
       else
-        render guidenotes_path
+        render guides_path
       end
     end
 
     # DELETE /pages/1
     def destroy
-      @guidenote.destroy
-      redirect_to guidenotes_url, notice: 'guidenote item was successfully destroyed.'
+      @guide.destroy
+      redirect_to guides_url, notice: 'guide item was successfully destroyed.'
     end
 
     private
       # Use callbacks to share common setup or constraints between actions.
-      def set_guidenote
-        @guidenote = Guidenote.where(:id => params[:id]).first
+      def set_guide
+        @guide = Guide.where(:id => params[:id]).first
       end
 
       # Only allow a trusted parameter "white list" through.
-      def guidenote_params
-        params.require(:guidenote).permit(:id, :description, :text)
+      def guide_params
+        params.require(:guide).permit(:id, :preamble_id, :text, :postscript_id)
       end
   end
 
