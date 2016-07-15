@@ -1,10 +1,12 @@
 require 'test_helper'
 
 class PerformkeyTest < ActiveSupport::TestCase
-#associations
+#associations 
    test "should have associations" do
      performkey = Performkey.new
      assert_respond_to(performkey, :performs)
+     assert_respond_to(performkey, :unit)
+     assert_respond_to(performkey, :standard)
    end
 
 #scopes
