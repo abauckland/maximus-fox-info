@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507082904) do
+ActiveRecord::Schema.define(version: 20160515215407) do
 
   create_table "api_keys", force: true do |t|
     t.string   "access_token"
@@ -101,11 +101,22 @@ ActiveRecord::Schema.define(version: 20160507082904) do
   add_index "instances", ["product_id"], name: "PRODUCT", using: :btree
 
   create_table "itemitems", force: true do |t|
-    t.integer  "parent_id"
-    t.integer  "child_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "itemrelate_id"
+    t.integer  "item_id"
+  end
+
+  add_index "itemitems", ["itemrelate_id"], name: "RELATE", using: :btree
+
+  create_table "itemrelates", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "relation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "itemrelates", ["item_id"], name: "ITEM", using: :btree
 
   create_table "items", force: true do |t|
     t.string   "title"
