@@ -1,0 +1,1 @@
+  PRODUCT_IMPORT_HEADERS = ['item', 'company', 'ref', 'name', 'range', 'type', 'keywords', 'parent'].freeze
